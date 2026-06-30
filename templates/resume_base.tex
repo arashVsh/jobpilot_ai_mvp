@@ -1,0 +1,344 @@
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+\usepackage{xcolor}
+\definecolor{accentTitle}{HTML}{0e6e55}
+\definecolor{accentText}{HTML}{0e6e55}
+\definecolor{accentLine}{HTML}{a16f0b}
+
+% Misc. Options
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+
+% Adjust Margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\setlength{\tabcolsep}{0pt}
+\setlength{\footskip}{3.7pt}
+\raggedbottom
+\raggedright
+
+% ATS Readability
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+%-----------------%
+% Custom Commands %
+%-----------------%
+
+% Centered title along with subtitle between HR
+% Usage: \documentTitle{Name}{Details}
+\newcommand{\documentTitle}[2]{
+  \begin{center}
+    {\Huge\color{accentTitle} #1}
+    \vspace{10pt}
+    {\color{accentLine} \hrule}
+    \vspace{2pt}
+    %{\footnotesize\color{accentTitle} #2}
+    \footnotesize{#2}
+    \vspace{2pt}
+    {\color{accentLine} \hrule}
+  \end{center}
+}
+
+% Create a footer with correct padding
+% Usage: \documentFooter{\thepage of X}
+\newcommand{\documentFooter}[1]{
+  \setlength{\footskip}{10.25pt}
+  \fancyfoot[C]{\footnotesize #1}
+}
+
+% Simple wrapper to set up page numbering
+% Usage: \numberedPages
+% WARNING: Must run pdflatex twice!
+\newcommand{\numberedPages}{
+  \documentFooter{\thepage/\pageref{LastPage}}
+}
+
+% Section heading with horizontal rule
+% Usage: \section{Title}
+\titleformat{\section}{
+  \vspace{-5pt}
+  \color{accentText}
+  \raggedright\large\bfseries
+}{}{0em}{}[\color{accentLine}\titlerule]
+
+% Section heading with separator and content on same line
+% Usage: \tinysection{Title}
+\newcommand{\tinysection}[1]{
+  \phantomsection
+  \addcontentsline{toc}{section}{#1}
+  {\large{\bfseries\color{accentText}#1} {\color{accentLine} |}}
+}
+
+% Indented line with arguments left/right aligned in document
+% Usage: \heading{Left}{Right}
+\newcommand{\heading}[2]{
+  \hspace{10pt}#1\hfill#2\\
+}
+
+% Adds \textbf to \heading
+\newcommand{\headingBf}[2]{
+  \heading{\textbf{#1}}{\textbf{#2}}
+}
+
+% Adds \textit to \heading
+\newcommand{\headingIt}[2]{
+  \heading{\textit{#1}}{\textit{#2}}
+}
+
+% Template for itemized lists
+% Usage: \begin{resume_list} [items] \end{resume_list}
+\newenvironment{resume_list}{
+  \vspace{-7pt}
+  \begin{itemize}[itemsep=-2px, parsep=1pt, leftmargin=30pt]
+}{
+  \end{itemize}
+  %\vspace{-2pt}
+}
+
+% Formats an item to use as an itemized title
+% Usage: \itemTitle{Title}
+\newcommand{\itemTitle}[1]{
+  \item[] \underline{#1}\vspace{4pt}
+}
+
+% Bullets used in itemized lists
+\renewcommand\labelitemi{--}
+
+\begin{document}
+
+\documentTitle{ARASH VASHAGH}{
+  \href{mailto:arash.vashagh@gmail.com}{
+    \raisebox{-0.15\height} \faEnvelope\ Email} ~~~~~ | ~~~~~
+  \href{tel:+1 (506)-238-7170}{
+    \raisebox{-0.05\height} \faPhone\ +1 (506)-238-7170} ~~~~~ | ~~~~~
+  \href{https://www.linkedin.com/in/arash-vashagh-23084923a/}{
+    \raisebox{-0.15\height} \faLinkedin\ LinkedIn} ~~~~~ | ~~~~~
+  \href{https://scholar.google.com/citations?user=yOVk_hcAAAAJ&hl=en}{
+    \raisebox{-0.15\height} \faGraduationCap\ Google Scholar} ~~~~~ | ~~~~~
+  \href{https://www.arashvashagh.com/}{
+    \raisebox{-0.15\height} \faGlobe\ Portfolio} ~~~~~ | ~~~~~
+  \raisebox{-0.15\height} \faMapMarker\ Fredericton, NB
+}
+
+  %---------%
+  % Summary %
+  %---------%
+
+\section{Summary}
+% Software Developer with strong experience in machine learning, AI security, and cybersecurity. Built desktop, mobile, and backend applications using Python, Streamlit, Java, JavaFX, Kotlin, FastAPI, and REST APIs. Certified in AI, cloud, and cybersecurity, with research and project experience in adversarial machine learning and secure intelligent systems.
+
+
+% Research Assistant focused on Machine Learning, AI Security, and Cybersecurity. Experienced in adversarial machine learning research, with multiple publications and hands-on projects in trustworthy AI and robust ML. Certified in AI, cloud, and cybersecurity, including CompTIA Security+, with a strong interest in applying intelligent systems to cybersecurity challenges.
+
+
+Machine Learning Developer with multiple research publications and industry certifications in AI, cybersecurity, and cloud. Experienced in adversarially resilient models and end-to-end deployed AI applications using PyTorch, Streamlit, FastAPI, and cloud platforms such as AWS and Azure. Strong at translating research into practical products for users. Available for full-time roles and open to relocation across Canada.
+
+%--------%
+% Skills %
+%--------%
+
+\section{Skills}
+\textbf{Programming:} Python, Java, Kotlin, JavaScript, SQL, C++ \\
+
+\textbf{AI/ML:} PyTorch, TensorFlow, Scikit-learn, Reinforcement Learning, Stable-Baselines3, Gymnasium, NLP, Document Question Answering, Information Retrieval, RAG/LLMOps, Agentic Design \\
+
+\textbf{AI Security \& Cybersecurity:} Adversarial Machine Learning, Adversarial Attacks, Adversarial Defense, Adversarial Detection, Robustness Evaluation, Wireshark \\
+
+\textbf{Web, Backend \& APIs:} React, HTML, CSS, Streamlit, FastAPI, Flask, REST APIs, OpenAI API, JSON Processing \\
+
+\textbf{Cloud \& Deployment:} AWS, Microsoft Azure, Google Cloud, Streamlit Community Cloud, Docker \\
+
+\textbf{Tools \& Libraries:} NumPy, Pandas, Matplotlib, PIL, Jupyter, VS Code, IntelliJ IDEA, Git, GitHub, MLflow, pypdf, ReportLab \\
+
+\textbf{Languages:} Persian (Native), English (Professional)
+
+
+
+
+
+
+
+\section{Certifications}
+
+\begin{resume_list}
+\item \textbf{AI and Machine Learning:} AWS Certified AI Practitioner; Microsoft AI-900; DeepLearning.AI Agentic AI
+
+\item \textbf{Cybersecurity:} CompTIA Security+; Microsoft SC-900
+
+\item \textbf{Cloud Computing:} AWS Certified Cloud Practitioner; Microsoft AZ-900; Google Cloud Digital Leader (results pending)
+
+\item \textbf{Data and Project Management:} CompTIA Data+; Microsoft DP-900; CompTIA Project Management Essentials; CompTIA DataSys+ (results pending)
+\end{resume_list}
+
+
+  %------------%
+  % Experience %
+  %------------%
+
+\section{Experience}
+
+\headingBf{Graduate Research Assistant (Team Lead) | UNB | Fredericton, Canada}{Sep 2024 -- Present}
+\begin{resume_list}
+  \item Conducting MSc thesis research in Adversarial Machine Learning, focusing on attacks, detection, and trustworthy AI.
+  \item Co-authored \href{https://www.techrxiv.org/doi/full/10.36227/techrxiv.177272853.30003431/v1}{\textcolor{blue}{a survey}} on adversarial attacks and another survey on adversarial defense mechanisms.
+  \item Proposed and implemented two adversarial detection mechanisms, currently under internal faculty review.
+  \item Developing an adversarial attack on fusion models, with manuscript in progress.
+  \item Coordinating graduate student work and managing the \href{https://www.linkedin.com/company/trustworthy-and-secure-ai-tsai-lab/?viewAsMember=true}{\textcolor{blue}{TSAI LinkedIn page}} for lab updates and educational content.
+\end{resume_list}
+
+
+\headingBf{Graduate Teaching Assistant | UNB | Fredericton, Canada}{Jan 2025 -- Apr 2026}
+\begin{resume_list}
+      \item \textit{Software Engineering} (Winter 2026) -- Java
+      \item \textit{Data Communication and Network Modeling} (Fall 2025) -- Python
+      \item \textit{Data Science for Big Data Analytics} (Winter 2025) -- Python
+\end{resume_list}
+
+
+\headingBf{Conference Reviewer | Remote}{Jul 2024 -- Oct 2024}
+\begin{resume_list}
+    \item Reviewed manuscripts and provided structured feedback at international conferences:
+          \begin{itemize}[itemsep=-2px, leftmargin=20pt]
+              \item \textit{ArtInHCI 2024} -- Artificial Intelligence and Human-Computer Interaction (Kunming, China) 
+              \href{https://drive.google.com/file/d/18Jl1Mu6-fi-272sEjHUOpTdb3qWVf0DJ/view?usp=drive_link}{\textcolor{blue}{[Certificate]}}
+              \item \textit{BIBE 2024} -- Biological Information and Biomedical Engineering (Hohhot, China) 
+              \href{https://drive.google.com/file/d/1qcew0MJE69DjEmTelrJihG1ffeAVpHj7/view?usp=drive_link}{\textcolor{blue}{[Certificate]}}
+          \end{itemize}
+\end{resume_list}
+
+
+\headingBf{Research Assistant | IUT | Isfahan, Iran}{Feb 2021 -- Feb 2024}
+\begin{resume_list}
+    \item Conducted research on machine learning and healthcare, resulting in two IEEE publications
+      \href{https://ieeexplore.ieee.org/abstract/document/10326310}{\textcolor{blue}{[1]}} and
+      \href{https://ieeexplore.ieee.org/abstract/document/10334666}{\textcolor{blue}{[2]}}.
+    \item Collaborated with faculty on implementation, paper writing, and presenting at conferences.
+\end{resume_list}
+
+\headingBf{Teaching Assistant | IUT | Isfahan, Iran}{Feb 2021 -- Feb 2024}
+\begin{resume_list}
+    \item Courses: Artificial Intelligence, Embedded Systems, Data Structures, and Programming Labs in C++, Java, and Python.
+    \item Gave tutorials and graded assignments.
+\end{resume_list}
+
+
+%------------%
+% Education %
+%------------%
+
+\section{Education}
+
+\headingBf{Master’s Candidate | University of New Brunswick (UNB), Fredericton, Canada}{Sep 2024 -- Aug 2026}
+\begin{resume_list}
+  \item Awarded Graduate Scholarship and Research Grant.
+  \item Major: Computer Science
+  \item Research Focus: Adversarial Machine Learning
+\end{resume_list}
+
+\headingBf{Bachelor of Science | Isfahan University of Technology (IUT), Isfahan, Iran}{Sep 2019 -- Feb 2024}
+\begin{resume_list}
+  \item Major: Computer Engineering
+  \item Minor: Intelligent Systems
+\end{resume_list}
+
+
+%%----------------------------%
+% % Projects %
+% %----------------------------%
+
+\section{Selected Projects}
+
+\headingBf{PaperWise AI: Deployed Agentic Research Paper RAG / LLMOps App}{Jun 2026}
+\begin{resume_list}
+\item Built and deployed a public Streamlit app for research paper question answering.
+\item Implemented PDF ingestion, text extraction, chunking, TF-IDF retrieval, OpenAI API integration, and offline fallback.
+\item Applied agentic design through suggested questions, reviewer critique mode, structured paper summaries, multi-paper comparison, and PDF answer export.
+\item Displayed RAG pipeline metrics including retrieval scores, response latency, retrieved chunks, and citation usage.
+\item Technologies: Python, Streamlit, Scikit-learn, OpenAI API, pypdf, ReportLab, Streamlit Community Cloud.
+\item Live app: \href{https://paperwise-ai.streamlit.app/}{\textcolor{blue}{Streamlit}}.
+\item Source code: \href{https://github.com/arashVsh/research-paper-ragops}{\textcolor{blue}{GitHub}}.
+\end{resume_list}
+
+
+\headingBf{EvasionRL: Deployed Reinforcement Learning Security Demo}{Jun 2026}
+\begin{resume_list}
+\item Built and deployed a Streamlit app for test-time evasion attacks on a DQN MountainCar agent.
+\item Compared clean and attacked rollouts under perturbed observations.
+% \item Kept the model, reward, and environment physics unchanged during attacks.
+\item Added FGSM, PGD, random-noise, and no-attack modes with adjustable settings.
+\item Built a custom MountainCar renderer and browser-side playback for Streamlit Cloud.
+\item Reported success/failure, total return, perturbation size, and action-change metrics.
+\item Technologies: Python, PyTorch, Stable-Baselines3, Gymnasium, Streamlit, NumPy, PIL.
+\item Live app: \href{https://arashvsh-evasionrl-app-najahp.streamlit.app/}{\textcolor{blue}{Streamlit}}.
+\item Source code: \href{https://github.com/arashVsh/EvasionRL}{\textcolor{blue}{GitHub}}.
+\end{resume_list}
+
+
+\headingBf{PromptShield: Adversarial Detection for Vision-Language Models}{Jan 2026 -- May 2026}
+\begin{resume_list}
+\item Developed a machine learning framework to detect adversarial images in vision-language models.
+\item Evaluated detection performance across multiple datasets, model backbones, and adversarial attack settings.
+\item Designed experiments for robustness evaluation, attack transferability analysis, and detector performance comparison.
+\item Built reproducible ML experiments for model training, evaluation, metric tracking, and result analysis.
+\item Technologies: Python, PyTorch, OpenCLIP, NumPy, Scikit-learn, adversarial machine learning.
+\item Manuscript and code under review at \href{https://neurips.cc/}{\textcolor{blue}{NeurIPS 2026}}.
+\item Source code: \href{https://github.com/arashVsh/PromptShield}{\textcolor{blue}{GitHub}}.
+\end{resume_list}
+
+% \headingBf{AttackBench: Adversarial Attack Visualization Tool}{Mar 2026 -- Apr 2026}
+% \begin{resume_list}
+% \item Developed a desktop application to generate, run, and visualize adversarial attacks on image classification models.
+% \item Implemented a JavaFX user interface with a Python FastAPI backend for real-time model inference and attack execution.
+% \item Displayed model predictions, confidence scores, adversarial examples, and attack impact for user interpretation.
+% \item Integrated REST API communication between frontend and backend components.
+% \item Technologies: Java, JavaFX, Python, PyTorch, FastAPI, REST APIs, adversarial machine learning.
+% \item Source code: \href{https://github.com/arashVsh/AttackBench---Scripts}{\textcolor{blue}{GitHub}}.
+% \end{resume_list}
+
+% \headingBf{PhishGuard: Phishing URL Detection Application}{Mar 2026 -- Apr 2026}
+% \begin{resume_list}
+% \item Developed an Android application for phishing URL detection using a Kotlin mobile frontend and Python backend.
+% \item Integrated REST API communication between the Android client and backend prediction service.
+% \item Implemented URL validation, DNS lookup, SSL verification, feature extraction, and machine learning-based classification.
+% \item Returned prediction labels, confidence scores, and user-friendly security feedback.
+% \item Technologies: Kotlin, Android, Python, Flask, Scikit-learn, Retrofit, REST APIs.
+% \item Source code: \href{https://github.com/arashVsh/PhishGuard}{\textcolor{blue}{GitHub}}.
+% \end{resume_list}
+
+
+%%----------------------------%
+% % Voluntary Educator %
+% %----------------------------%
+
+\section{Voluntary Educator (AI Security)}
+
+\headingBf{AI Security and Adversarial Machine Learning (AML) Course | Online}{Jun 2026 -- Present}
+\begin{resume_list}
+    \item Creating a Persian technical course on AI Security and AML to support learners facing language barriers.
+    \item Developed slides and scripts on machine learning foundations for AML.
+    \item Published course videos through a structured \href{https://youtube.com/playlist?list=PLYxTF848CZLmN1wPNhX5gKc4g4DSRafZE&si=mGru-L7j3YX1JNZC}{\textcolor{blue}{YouTube playlist}} and shared course materials on \href{https://github.com/arashVsh/AML_Course_Persian}{\textcolor{blue}{GitHub}}.
+\end{resume_list}
+
+\end{document}
