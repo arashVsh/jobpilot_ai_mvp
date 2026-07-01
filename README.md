@@ -16,6 +16,17 @@ The app is designed for job seekers who want one place to:
 
 JobPilot AI does **not** automatically apply to jobs and does **not** send emails for you. You always review the job and the draft before taking action.
 
+
+## Screenshots
+
+### Scanner, filters, and API status
+
+![JobPilot AI scanner dashboard showing resume upload, search filters, API status, and scanner results](docs/images/scanner-dashboard.png)
+
+### Saved job records and fit summaries
+
+![JobPilot AI saved job records showing job cards, company names, fit scores, requirements, and accepted-job explanations](docs/images/saved-job-records.png)
+
 ---
 
 ## Quick start
